@@ -27,18 +27,19 @@ pipeline {
                 sh './node_modules/gulp/bin/gulp.js lint-js'
             }
         }
-        // stage('Deploy-Staging') {
-        //   agent {
-        //       docker {
-        //         image 'node:9.11.1'
-        //         args  '-u root'
-        //       }
-        //   }
-        //     steps {
-        //         sh 'apt-get update -qq && apt-get install -y -qq sshpass'
-        //         sh 'sshpass -ptoor ssh -o StrictHostKeyChecking=no root@35.192.162.132 "cd /usr/share/nginx/html/staging-jenkins-rvsharma.com && git pull -f"'
-        //     }
-        // }
+        stage('Deploy-Staging') {
+          agent {
+              docker {
+                image 'node:9.11.1'
+                label 'docker'
+                args  '-u root'
+              }
+          }
+            steps {
+                sh 'apt-get update -qq && apt-get install -y -qq sshpass'
+                sh 'sshpass -p$USER_PASS ssh -o StrictHostKeyChecking=no $USER@$SERVER_IP "cd $STAGING_DIR && git pull -f"'
+            }
+        }
         stage('Functionize-CLI') {
           agent {
               docker {
@@ -55,17 +56,18 @@ pipeline {
               sh 'cd functionizecli && wget -O - https://bitbucket.org/functionize/functionizecli/raw/master/ThirdParty_run.sh | bash'
             }
         }
-        // stage('Deploy-Production') {
-        //   agent {
-        //       docker {
-        //         image 'node:9.11.1'
-        //         args  '-u root'
-        //       }
-        //   }
-        //     steps {
-        //         sh 'apt-get update -qq && apt-get install -y -qq sshpass'
-        //         sh 'sshpass -ptoor ssh -o StrictHostKeyChecking=no root@35.192.162.132 "cd /usr/share/nginx/html/production-jenkins-rvsharma.com && git pull -f"'
-        //     }
-        // }
+        stage('Deploy-Production') {
+          agent {
+              docker {
+                image 'node:9.11.1'
+                label 'docker'
+                args  '-u root'
+              }
+          }
+            steps {
+                sh 'apt-get update -qq && apt-get install -y -qq sshpass'
+                sh 'sshpass -p$USER_PASS ssh -o StrictHostKeyChecking=no $USER@$SERVER_IP "cd $PRODUCTION_DIR && git pull -f"'
+            }
+        }
     }
   }

@@ -37,7 +37,7 @@ pipeline {
           }
             steps {
                 sh 'apt-get update -qq && apt-get install -y -qq sshpass'
-                sh 'sshpass -p$USER_PASS ssh -o StrictHostKeyChecking=no $USER@$SERVER_IP "cd $STAGING_DIR && git pull -f"'
+                sh "sshpass -p$USER_PASS ssh -o StrictHostKeyChecking=no $USER@$SERVER_IP \"cd $STAGING_DIR && git pull -f\""
             }
         }
         stage('Functionize-CLI') {
@@ -66,7 +66,7 @@ pipeline {
           }
             steps {
                 sh 'apt-get update -qq && apt-get install -y -qq sshpass'
-                sh 'sshpass -p$USER_PASS ssh -o StrictHostKeyChecking=no $USER@$SERVER_IP "cd $PRODUCTION_DIR && git pull -f"'
+                sh "sshpass -p$USER_PASS ssh -o StrictHostKeyChecking=no $USER@$SERVER_IP \"cd $PRODUCTION_DIR && git pull -f\""
             }
         }
     }

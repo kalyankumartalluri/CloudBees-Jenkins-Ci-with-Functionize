@@ -7,7 +7,6 @@ pipeline {
           agent {
               docker {
                 image 'node:9.11.1'
-                label 'docker'
                 args  '-u root'
               }
           }
@@ -20,7 +19,6 @@ pipeline {
           agent {
               docker {
                 image 'node:9.11.1'
-                label 'docker'
                 args  '-u root'
               }
           }
@@ -33,7 +31,6 @@ pipeline {
           agent {
               docker {
                 image 'node:9.11.1'
-                label 'docker'
                 args  '-u root'
               }
           }
@@ -46,7 +43,6 @@ pipeline {
           agent {
               docker {
                 image 'node:9.11.1'
-                label 'docker'
                 args  '-u root'
               }
           }
@@ -62,7 +58,6 @@ pipeline {
           agent {
               docker {
                 image 'node:9.11.1'
-                label 'docker'
                 args  '-u root'
               }
           }

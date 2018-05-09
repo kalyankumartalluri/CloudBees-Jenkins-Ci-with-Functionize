@@ -4,7 +4,7 @@
   <br>
 </h1>
 <p align="center">
-<img src="https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiRDZtT2hjbEJYcGg3TllTZ0xuZVlCeThrYzEwNDIxOHZjQ0dQY09wbkdGV2NabGJXNlpxNUl1dDI5aThsMmpVYjRDNE04dTdaWXNPTXlVKzl6aHJKUWlvPSIsIml2UGFyYW1ldGVyU3BlYyI6InZtQzB2TXdWZXZWMjQwUUQiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master"></a>
+<img src="http://jenkins.functionizeapp.com/job/Jenkins%20CloudBees%20CI%20With%20Functionize/badge/icon"></a>
 <p align="center">
   This repository contains Example Of Intregrating <strong>Functionize Smart Testing Tool </strong>with <strong>Jenkins CI</strong>
 </p>

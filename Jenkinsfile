@@ -47,6 +47,8 @@ pipeline {
               }
           }
             steps {
+              sh 'export PROJECT_DEPLOYMENT_ID=004ba9e8536fc9a9ad6349a12121269b'
+              sh 'echo from Command $PROJECT_DEPLOYMENT_ID'
               sh 'rm -rf functionizecli'
               sh 'git clone https://functionize@bitbucket.org/functionize/functionizecli.git'
               sh 'cd functionizecli && npm install'

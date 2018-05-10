@@ -58,9 +58,10 @@ pipeline {
             }
         }
 
-        input 'Continue to deploy stage?'
+        // input 'Continue to deploy stage?'
 
         stage('Deploy-Production') {
+          input 'Deploy to Production?'
           agent {
               docker {
                 image 'node:9.11.1'

@@ -56,6 +56,9 @@ pipeline {
               sh 'cd functionizecli && wget -O - https://bitbucket.org/functionize/functionizecli/raw/master/ThirdParty_run.sh | bash'
             }
         }
+        stage('Deploy approval'){
+              input "Deploy to prod?"
+            }
         stage('Deploy-Production') {
           agent {
               docker {

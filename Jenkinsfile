@@ -57,13 +57,6 @@ pipeline {
             }
         }
 
-        stage('Decide Production') {
-          agent none
-          steps {
-            input "Deploy to prod?"
-          }
-        }
-
         stage('Deploy-Production') {
           agent {
               docker {

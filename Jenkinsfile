@@ -4,9 +4,6 @@ pipeline {
     agent none
     stages {
           stage('Functionize-CLI') {
-          environment {
-          // 'This value is exported to all commands in this stage'
-          }
           agent {
               docker {
                 image 'node:9.11.1'

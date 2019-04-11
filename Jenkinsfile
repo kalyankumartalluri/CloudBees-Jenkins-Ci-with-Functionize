@@ -7,6 +7,8 @@ pipeline {
           environment {
           // 'This value is exported to all commands in this stage'
             PROJECT_DEPLOYMENT_ID = "321138d5f2159c974b704293e2701a3a"
+            YOUR_API_KEY="48a1e4c24eaecdb1e0448965aa01b970"
+            YOUR_API_KEY="16c8e1ade22c4ca3180121ded855c1b2"
           }
           agent {
               docker {
@@ -16,6 +18,8 @@ pipeline {
           }
             steps {
               sh 'echo from Command $PROJECT_DEPLOYMENT_ID'
+              sh 'echo from Command $YOUR_API_KEY'
+              sh 'echo from Command $YOUR_API_KEY'
               sh 'rm -rf functionizecli'
               sh 'git clone https://functionize@bitbucket.org/functionize/functionizecli.git'
               sh 'cd functionizecli && npm install'

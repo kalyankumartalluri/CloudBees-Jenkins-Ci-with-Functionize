@@ -6,7 +6,6 @@ pipeline {
           stage('Functionize-CLI') {
           environment {
           // 'This value is exported to all commands in this stage'
-            PROJECT_DEPLOYMENT_ID = "321138d5f2159c974b704293e2701a3a"
           }
           agent {
               docker {

@@ -7,8 +7,6 @@ pipeline {
           environment {
           // 'This value is exported to all commands in this stage'
             PROJECT_DEPLOYMENT_ID = "321138d5f2159c974b704293e2701a3a"
-            YOUR_API_KEY = "65c79f9961f6aec28539385fe77e639d"
-            YOUR_SECRET_KEY = "16c8e1ade22c4ca3180121ded855c1b2"
           }
           agent {
               docker {
